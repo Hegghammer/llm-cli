@@ -1,0 +1,24 @@
+[default]
+allow_clipboard = True
+conversation_timeout_minutes = 10
+db_file = $HOME/llm-cli/llm-cli.db
+log_file = $HOME/llm-cli/llm-cli.log
+log_level = INFO
+model = mistral-large-latest
+page_reader_api_key = $JINA_API_KEY
+page_reader_endpoint = https://eu.r.jina.ai/
+provider_endpoint = https://api.mistral.ai/v1/chat/completions
+provider_api_key = $MISTRAL_API_KEY
+search_api_key = $JINA_API_KEY
+search_endpoint = https://eu.s.jina.ai/
+system_role = "A helpful assistant"
+temperature = 1
+
+[rag]
+rag_answer_model = gemma3:4b
+rag_db_dir = $HOME/llm-cli/chromadb
+rag_doc_dir = $HOME/my_docs
+rag_embed_model = mxbai-embed-large:latest
+rag_endpoint = http://localhost:11434
+rag_excerpt_length = 100
+rag_source_linkformat = markdown

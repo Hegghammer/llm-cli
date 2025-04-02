@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-cli"
+version = "0.1.0"
+description = "CLI tool for interacting with LLM APIs and performing RAG"
+requires-python = ">=3.8"
+dependencies = [
+    "chromadb",
+    "langchain",
+    "langchain-chroma",
+    "langchain-community",
+    "langchain-ollama",
+    "markdown",
+    "pyperclip",
+    "requests", 
+    "unstructured", 
+]
+
+[project.scripts]
+llm-cli = "llm_cli.cli:main"
