@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "llm-cli"
 version = "0.1.0"
 description = "CLI tool for interacting with LLM APIs and performing RAG"
-requires-python = ">=3.8"
+requires-python = ">=3.8,<3.12"
 dependencies = [
     "chromadb",
     "langchain",
