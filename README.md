@@ -1,6 +1,6 @@
 # llm-cli
 
-`llm-cli` is a command line utility for interacting with large language model APIs. It was originally developed for use with [Espanso](https://espanso.org) text expander via the [`espanso-llm`](https://gitlab.com/Hegghammer/espanso-llm) extension, but it can also be used on its own.
+`llm-cli` is a command line utility for interacting with large language model APIs. It was originally developed for use with [Espanso](https://espanso.org) text expander via the [`espanso-llm`](https://github.com/Hegghammer/espanso-llm) extension, but it can also be used on its own.
 
 ## Features
 
