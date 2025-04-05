@@ -142,7 +142,15 @@ def run_model(config: dict):
                 ------------
                 {search_results}
                 ------------
-                Now use this context to answer the user's original question in a clear manner. Be very concise. At the end, list the titles, urls, and publication dates of the three main sources you relied on to answer the question. Use markdown format like so: * [title](url) (dd mmm YYYY).
+                Now use this context to answer the user's original question in a clear and concise manner. Source your statements where relevant with footnotes in markdown format containing the title, full URL, and publication date of the source. For example:
+                
+                ---
+                The top story today is the stock market crash in Asia.[^1]
+                
+                **Sources**
+                
+                [^1]: ["Markets crash in Asia"](https://bbc.co.uk/news/stock-market-crash/) (2 Jan 2025)
+                ---
                 '''
 
         if config["follow_links"]:
