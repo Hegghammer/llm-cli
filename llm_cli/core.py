@@ -17,10 +17,12 @@ from .utils import (
     get_centered_excerpt, format_source_link, timestamp_n_minutes_ago
 )
 
+version = "0.2.0"
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Command-line tool to interact with large language models.")
     parser.add_argument("--allow-clipboard", action="store_true", help="allow clipboard content to be sent to the llm", default=True)
-    parser.add_argument("--config-file", help="path to the config file")
+    parser.add_argument("-c", "--config-file", help="path to the config file")
     parser.add_argument("--conversation-timeout-minutes", default=10, type=int, help="conversation timeout in minutes")
     parser.add_argument("--db-file", help="path to the chat history database file")
     parser.add_argument("--disallow-clipboard", dest="allow_clipboard", action="store_false", help="disallow clipboard content to be sent to the llm")
@@ -28,7 +30,7 @@ def parse_args():
     parser.add_argument('--full-content', action='store_true', help='retrieve full webpage content in web search')
     parser.add_argument("--log-file", help="path to the log file")
     parser.add_argument("--log-level", default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], help="specify the logging level")
-    parser.add_argument("--model", help="name of llm")
+    parser.add_argument("-m", "--model", help="name of llm")
     parser.add_argument("--page-reader-endpoint", default="https://eu.r.jina.ai/", help="API address for page reader provider")
     parser.add_argument("--page-reader-api-key", help="API key for page reader provider")    
     parser.add_argument("--prompt", default="", help="prompt to the llm")
@@ -46,8 +48,9 @@ def parse_args():
     parser.add_argument("--search-endpoint", default="https://eu.s.jina.ai/", help="API address for web search provider")
     parser.add_argument("--search-api-key", help="API key for web search provider")
     parser.add_argument("--system-role", default="A helpful assistant", help="system role for llm prompt")
-    parser.add_argument("--temperature", default=1, type=float, help="llm temperature")
-    parser.add_argument("--web-search", action="store_true", help="add web search")
+    parser.add_argument("-t", "--temperature", default=1, type=float, help="llm temperature")
+    parser.add_argument("-v", "--version", action="version", version=version)
+    parser.add_argument("-w", "--web-search", action="store_true", help="add web search")
     return parser.parse_args()
 
 def run_model(config: dict):
